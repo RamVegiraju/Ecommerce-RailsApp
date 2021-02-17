@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Shoppingitems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Item name</th>
+      <th>Price</th>
+      <th>Item number</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shoppingitems.each do |shoppingitem| %>
+      <tr>
+        <td><%= shoppingitem.email %></td>
+        <td><%= shoppingitem.item_name %></td>
+        <td><%= shoppingitem.price %></td>
+        <td><%= shoppingitem.item_number %></td>
+        <td><%= link_to 'Show', shoppingitem %></td>
+        <td><%= link_to 'Edit', edit_shoppingitem_path(shoppingitem) %></td>
+        <td><%= link_to 'Destroy', shoppingitem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shoppingitem', new_shoppingitem_path %>
